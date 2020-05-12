@@ -4,13 +4,13 @@
   "description": "Limited version of OData metadata response for OData V2, based on odata-v4-service-metadata",
   "main": "lib/metadata.js",
   "bugs": {
-  "url": "https://github.com/tjc-group/odata-v2-service-metadata/issues"
-},
+    "url": "https://github.com/tjc-group/odata-v2-service-metadata/issues"
+  },
   "homepage": "https://github.com/tjc-group/odata-v2-service-metadata#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/tjc-group/odata-v2-service-metadata.git"
-  },
+     "url": "https://github.com/tjc-group/odata-v2-service-metadata.git"
+ },
   "keywords": [
     "OData",
     "V4",
