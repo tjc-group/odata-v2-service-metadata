@@ -20,7 +20,7 @@
     "XML"
   ],
   "typings": "lib/metadata.d.ts",
-  "author": "TJC Group",
+  "author": "JayStack",
   "license": "MIT",
   "engines": {
     "node": ">=0.6.0"
