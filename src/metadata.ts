@@ -1,6 +1,6 @@
 import { Edm } from 'odata-v4-metadata'
-import { XmlMetadata } from './xmlMetadata'
-import { defineEntities } from './defineEntities'
+import { XmlMetadata } from './xmlMetadataV2'
+import { defineEntities } from './defineEntitiesV2'
 import { Request, Response, RequestHandler } from 'express';
 
 export class ServiceMetadata {
@@ -38,14 +38,14 @@ export class ServiceMetadata {
         this.data = xmlMetadata.processMetadata();
     }
     
-    requestHandler(format?: string) {
+    requestHandler(format?: string): (_: Request, res: Response, __: RequestHandler) => void  {
         return (_:Request, res:Response, __:RequestHandler) => {
             res.set('Content-Type', 'application/xml');
             res.send(this.document(format));
         };
     }
 
-    valueOf() {
+    valueOf(): any {
         return this.data;
     }
 }

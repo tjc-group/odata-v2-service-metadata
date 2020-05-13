@@ -1,6 +1,6 @@
 {
     "version": "0.1.0",
-    "command": "tsc",
+    "command": "npm run build",
     "showOutput": "always",
     "isShellCommand": true,
     "args": [],

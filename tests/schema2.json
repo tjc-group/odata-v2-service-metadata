@@ -1,5 +1,5 @@
 {
-  "version": "4.0",
+  "version": "1.0",
   "dataServices": {
     "schema": [
       {
@@ -12,6 +12,9 @@
                 "propertyRef": [
                   {
                     "name": "Id"
+                  },
+                  {
+                    "name": "Id1"
                   }
                 ]
               }
@@ -19,6 +22,11 @@
             "property": [
               {
                 "name": "Id",
+                "type": "Edm.Int32",
+                "nullable": "false"
+              },
+              {
+                "name": "Id1",
                 "type": "Edm.Int32",
                 "nullable": "false"
               },
@@ -63,6 +71,13 @@
                     "name": "Id"
                   }
                 ]
+              },
+              {
+                "propertyRef": [
+                  {
+                    "name": "Id"
+                  }
+                ]
               }
             ],
             "property": [
@@ -92,6 +107,11 @@
               },
               {
                 "name": "Id",
+                "type": "Edm.Int32",
+                "nullable": "false"
+              },
+              {
+                "name": "Id2",
                 "type": "Edm.Int32",
                 "nullable": "false"
               },
