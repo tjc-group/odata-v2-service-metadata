@@ -98,10 +98,12 @@ export class XmlMetadata {
 
     buildDataServices(xml: Xml.XmlCreator, dataservices: Edm.DataServices) {
         // var ns = xml.declareNamespace(this.options.edmx, 'edmx');
-        var dataservicesElement = xml.declareElement(xml.declareNamespace(this.options.m, 'm'), 'DataServices');
-        var version = xml.declareAttribute('DataServiceVersion');
+        var dataservicesElement = xml.declareElement(xml.declareNamespace(this.options.edmx, 'edmx'), 'DataServices');
+        var version = xml.declareAttribute('m:DataServiceVersion');
 
-        xml.startElement(dataservicesElement).addAttribute(version, this.options.DataServiceVersion || "2.0");
+        xml.startElement(dataservicesElement)
+            .addAttribute(xml.declareAttribute('xmlns:m'), this.options.m)
+            .addAttribute(version, this.options.DataServiceVersion || "2.0");
 
         this.buildSchema(xml, dataservices.schemas);
         xml.endElement();
