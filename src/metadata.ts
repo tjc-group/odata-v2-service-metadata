@@ -1,4 +1,4 @@
-import { Edm } from 'odata-v4-metadata'
+import { Edm } from "@tjc-group/odata-v4-metadata"
 import { XmlMetadata } from './xmlMetadataV2'
 import { defineEntities } from './defineEntitiesV2'
 import { Request, Response, RequestHandler } from 'express';

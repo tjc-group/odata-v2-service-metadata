@@ -1,15 +1,15 @@
 {
   "name": "@tjc-group/odata-v2-service-metadata",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Limited version of OData metadata response for OData V2, based on odata-v4-service-metadata",
   "main": "lib/metadata.js",
   "bugs": {
-  "url": "https://github.com/tjc-group/odata-v2-service-metadata/issues"
-},
+    "url": "https://github.com/tjc-group/odata-v2-service-metadata/issues"
+  },
   "homepage": "https://github.com/tjc-group/odata-v2-service-metadata#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/tjc-group/odata-v2-service-metadata.git"
+    "url": "git+https://github.com/tjc-group/odata-v2-service-metadata.git"
   },
   "keywords": [
     "OData",
@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "extend": "^3.0.0",
-    "odata-v4-metadata": "^0.1.2",
+    "@tjc-group/odata-v4-metadata": "^0.1.6",
     "@types/qs": "^6.5.1"
   },
   "devDependencies": {
@@ -43,5 +43,9 @@
     "pretest": "npm run build",
     "test": "mocha tests",
     "prepublish": "npm run build"
+  },
+  "directories": {
+    "lib": "lib",
+    "test": "tests"
   }
 }
