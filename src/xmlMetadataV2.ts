@@ -542,6 +542,7 @@ export class XmlMetadata {
 
             xml.startElement(entityContainerElement)
                 .addAttribute(name, entityContainer.name)
+                .addAttribute(xml.declareAttribute('m:IsDefaultEntityContainer'), "true")
 
             this.buildEntitySets(xml, entityContainer.entitySets)
             this.buildAssociationSets(xml, entityContainer.associationSets);
