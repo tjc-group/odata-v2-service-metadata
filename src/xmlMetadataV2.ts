@@ -349,7 +349,12 @@ export class XmlMetadata {
                 return toType.search(schema.namespace) === 0;
             });
 
-            var relationship = navigationProperty.partner + "_to_" + toType.replace(/\./g, "_")
+            let relation = navigationProperty.partner + "_to_" + toType.replace(/\./g, "_");
+            let relationship = relation;
+            let i = 1;
+            while (schemaV2.associations.some(association => association.name == relationship)) {
+                relationship = relationship + "_" + i;
+            }
 
             var navigationPropertyV2 = {
                 name: navigationProperty.name,
