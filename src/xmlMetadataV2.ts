@@ -354,6 +354,7 @@ export class XmlMetadata {
             let i = 1;
             while (schemaV2.associations.some(association => association.name == relationship)) {
                 relationship = relationship + "_" + i;
+                i++;
             }
 
             var navigationPropertyV2 = {
