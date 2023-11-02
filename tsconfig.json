@@ -6,7 +6,6 @@
         "target": "es6",
         "emitDecoratorMetadata": true,
         "declaration": true,
-        "watch": false,
         "sourceMap": true,
         "noUnusedLocals": true,
         "noUnusedParameters": true,

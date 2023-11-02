@@ -551,7 +551,7 @@ export class XmlMetadata {
                 .addAttribute(xml.declareAttribute('m:IsDefaultEntityContainer'), "true")
 
             this.buildEntitySets(xml, entityContainer.entitySets)
-            this.buildAssociationSets(xml, entityContainer.associationSets);
+            this.buildAssociationSets(xml, entityContainer, entityContainer.associationSets);
             this.buildActionImports(xml, entityContainer.actionImports)
             this.buildFunctionImports(xml, entityContainer.functionImports)
 
@@ -575,12 +575,14 @@ export class XmlMetadata {
         })
     }
 
-    buildAssociationSets(xml: Xml.XmlCreator, associationSets: AssociationSet[]) {
+    buildAssociationSets(xml: Xml.XmlCreator, entityContainer: EntityContainerV2, associationSets: AssociationSet[]) {
         associationSets && associationSets.forEach(associationSet => {
             let associationSetElement = xml.declareElement('AssociationSet');
             let name = xml.declareAttribute("Name");
+            const association = xml.declareAttribute("Association");
             xml.startElement(associationSetElement)
                 .addAttribute(name, associationSet.name)
+                .addAttribute(association, `${(entityContainer.parent as any).namespace}.${associationSet.association.name}`)
 
             this.buildAssociationSetEnds(xml, associationSet.ends)
 
